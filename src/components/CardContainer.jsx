@@ -1,10 +1,13 @@
-import { Container, Row } from "react-bootstrap"
-import {data}from '../helpers/data'
+import { Container} from "react-bootstrap"
+import {data} from '../helpers/data'
+import PlayerCard from "./PlayerCard";
 
 const CardContainer = ()=> {
     return(
-        <Container>
-         {data.map((player)=>console.log(player))}
+        <Container className="card-container rounded-4 my-4 p-3">
+         {data.map((player)=> (
+        <PlayerCard player = {player}/>
+         ) )}
 
         </Container>
     )
@@ -13,4 +16,4 @@ const CardContainer = ()=> {
 export default CardContainer;
 
 
-//cardlarımız flex yapısı içinde responsive bir yapıda olması için row 
+//data yı import ettik. data. map diyerek datanın her bir elemanını döndürdük.
